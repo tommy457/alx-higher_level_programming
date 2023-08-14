@@ -4,6 +4,7 @@
  * print_python_list_info - prints info about a python list
  * @p: list object
  */
+
 void print_python_list_info(PyObject *p)
 {
 	int i;
