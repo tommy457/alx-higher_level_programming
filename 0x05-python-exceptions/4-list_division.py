@@ -2,7 +2,7 @@
 
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
-
+    num = 0
     try:
         for i in range(list_length):
             try:
@@ -18,4 +18,6 @@ def list_division(my_list_1, my_list_2, list_length):
         print("out of range")
         new_list.append(0)
     finally:
+        for j in range(list_length - len(new_list)):
+            new_list.append(0)
         return new_list
