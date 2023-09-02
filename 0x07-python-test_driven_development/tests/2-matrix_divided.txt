@@ -1,0 +1,125 @@
+==============================
+How to Use 2-matrix_divided.py
+==============================
+
+This module defines an matrix division function ``matrix_divided(matrix, div)``.
+
+Using ``matrix_divided``
+=======================
+
+Import function from module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Normal Cases:
+============
+
+Test Case 1: normal case
+
+    >>> matrix_divided([[4, 8, 12], [16, 20, 24]], 2)
+    [[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+
+Test Case 2: normal case with rounded to 2 decimal places
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test Case 3: normal case with pre-defined matrix
+
+    >>> matrix = [[4, 8, 12], [16, 20, 24]]
+    >>> matrix_divided(matrix, 2)
+    [[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+    >>> matrix
+    [[4, 8, 12], [16, 20, 24]]
+
+Test Case 4: normal case with negative div and pre-defined matrix
+
+    >>> matrix = [[4, 8, 12], [16, 20, 24]]
+    >>> matrix_divided(matrix, -2)
+    [[-2.0, -4.0, -6.0], [-8.0, -10.0, -12.0]]
+    >>> matrix
+    [[4, 8, 12], [16, 20, 24]]
+
+Test Case 5: One element in matrix
+
+    >>> matrix_divided([[1]], 2)
+    [[0.5]]
+
+Test Case 6: normal case with 'inf' as div and pre-defined matrix
+
+    >>> matrix = [[4, 8, 12],[16, 20, 24]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    >>> matrix
+    [[4, 8, 12], [16, 20, 24]]
+
+Test Case 7: normal case with 'nan' as div and pre-defined matrix
+    
+    >>> matrix = [[4, 8, 12],[16, 20, 24]]
+    >>> matrix_divided(matrix, float('nan'))
+    [[nan, nan, nan], [nan, nan, nan]]
+    >>> matrix
+    [[4, 8, 12], [16, 20, 24]]
+
+Error Cases:
+============
+
+Test Case 8: empty list
+
+    >>> matrix = []
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Case 9: list with non int/float type
+
+    >>> matrix = [[1, 2, 3], ["foo", "bar", "98"]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+       ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Case 10: 0 as div
+
+    >>> matrix = [[1, 2, 3]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+       ...
+    ZeroDivisionError: division by zero
+
+Test Case 11: missing arguments
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+       ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Test Case 12: Not same size rows
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+Test Case 13: div not a number
+
+    >>> matrix_divided([[1, 2, 3]], "foo")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Test Case 14: passing a string as first arg
+
+    >>> matrix_divided("monty", 98)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Case 15: None as arg
+
+    >>> matrix_divided(none, None)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'none' is not defined
