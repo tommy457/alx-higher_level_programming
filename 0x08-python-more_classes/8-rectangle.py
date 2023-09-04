@@ -74,11 +74,11 @@ class Rectangle:
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")    
-    
+            raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() < rect_2.area():
             return rect_2
         return rect_1
+
     def __str__(self):
         """'Create a new string object from the given object"""
         if self.__height == 0 or self.__width == 0:
