@@ -1,0 +1,62 @@
+================================
+How to Use 5-text_indentation.py 
+===============================
+This module defines an integer addition function ``text_indentation(text)``.
+
+Using ``text_indentation``
+=========================
+
+Import function from module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Normal Cases:
+============
+
+Test Case 1: (str)
+
+    >>> text_indentation("hello. from: the other side??")
+    hello.
+    <BLANKLINE>
+    from:
+    <BLANKLINE>
+    the other side?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+Test Case 2: empty string
+
+    >>> text_indentation("")
+
+Test Case 3: no marks
+
+    >>> text_indentation("Hello from the other side")
+    Hello from the other side
+
+Test Case 4: spaces at the beginning and the end
+
+    >>> text_indentation("     Hello? from: the other side.     ")
+    Hello?
+    <BLANKLINE>
+    from:
+    <BLANKLINE>
+    the other side.
+    <BLANKLINE>
+
+Error Cases:
+===========
+
+Test Case 5: intger
+
+    >>> text_indentation(457)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test Case 6: no args
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
