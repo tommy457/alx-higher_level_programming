@@ -1,0 +1,81 @@
+=======================
+How to Use 1-my_list.py
+=======================
+
+This module defines an MyList class ``MyList``.
+
+Using ``MyList``
+=======================
+
+Import function from module:
+
+     >>> MyList = __import__('1-my_list').MyList
+
+Normal Cases:
+============
+
+Test Case 1:
+
+    >>> ll = MyList()
+    >>> type(ll) == MyList
+    True
+
+Test Case 2:
+
+    >>> ml = MyList()
+    >>> isinstance(ml, list)
+    True
+
+Test Case 3:
+
+    >>> type(MyList.__dict__['print_sorted'])
+    <class 'function'>
+
+Test Case 4:
+    >>> ml = MyList()
+    >>> ml.print_sorted()
+    []
+
+Test Case 5:
+
+    >>> ml = MyList([2, 10, 1])
+    >>> ml.print_sorted()
+    [1, 2, 10]
+
+Test Case 6:
+
+    >>> ml = MyList([1, 4, 2, 3, 5])
+    >>> ml.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Test Case 7:
+
+    >>> ml = MyList([2, 10, 1, -10, 20, 100, 0])
+    >>> ml.print_sorted()
+    [-10, 0, 1, 2, 10, 20, 100]
+    >>> ml
+    [2, 10, 1, -10, 20, 100, 0]
+
+Error Cases:
+============
+
+Test Case 8:
+
+    >>> ml.__class__.print_sorted()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+Test Case 9:
+
+    >>> ml.print_sorted([4, 2, 5])
+    Traceback (most recent call last):
+        ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+ 
+Test Case 10:
+
+    >>> ml.print_sorted([4, 2, 5], 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: print_sorted() takes 1 positional argument but 3 were given
