@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module for inherits_method"""
+
 
 def inherits_from(obj, a_class):
     """"function that returns True if the object is an instance
