@@ -31,7 +31,7 @@ class Base:
         if list_objs:
             list_objs = [instance.to_dictionary() for instance in list_objs]
         with open(str(cls.__name__) + ".json", "w") as f:
-                return f.write(cls.to_json_string(list_objs))
+            return f.write(cls.to_json_string(list_objs))
 
     @staticmethod
     def from_json_string(json_string):
@@ -60,5 +60,3 @@ class Base:
                 return [cls.create(**_dict) for _dict in list_dicts]
         except IOError:
             return []
-
-

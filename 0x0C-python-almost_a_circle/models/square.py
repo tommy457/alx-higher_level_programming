@@ -39,10 +39,15 @@ class Square(Rectangle):
             self.x = x
         if y is not None:
             self.y = y
-    
+
     def to_dictionary(self):
         """Method that returns the dictionary representation of a Square"""
-        return {"id":self.id, "x":self.x, "size":self.size, "y":self.y}
+        return {
+                "id": self.id,
+                "x": self.x,
+                "size": self.size,
+                "y": self.y
+                }
 
     def __str__(self):
         """Returns the user readable string form of the Square instance"""
