@@ -63,7 +63,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Method that Writes CSV serialization of a list of objects to a file """
+        """Method that Writes CSV serialization of a
+        list of objects to a file"""
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvf:
             if list_objs is None or list_objs == []:
@@ -93,4 +94,3 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
-
