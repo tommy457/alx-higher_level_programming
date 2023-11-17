@@ -12,5 +12,5 @@ class State(Base):
     """Sub-class that inherits from Base"""
     __tablename__ = 'states'
 
-    id = Column(Integer, primery_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128))
