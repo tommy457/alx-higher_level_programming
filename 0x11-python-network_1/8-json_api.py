@@ -16,13 +16,12 @@ if __name__ == "__main__":
         data["q"] = argv[1]
 
     req = requests.post(url, data=data)
-    res_dict = req.json()
+    try:
+        res_dict = req.json()
 
-    if (len(res_dict) == 0):
-        print("No result")
-
-    elif (req.headers.get('Content-Type')) != 'application/json':
+        if (len(res_dict) == 0):
+            print("No result")
+        else:
+            print("[{}] {}".format(res_dict.get("id"), res_dict.get("name")))
+    except Exception:
         print("Not a valid JSON")
-
-    else:
-        print("[{}] {}".format(res_dict.get("id"), res_dict.get("name")))
