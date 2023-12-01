@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that sends a POST request to the passed URLand displays the body of the response.
+Script that sends a POST request to the passed URLand displays the body.
 """
 import urllib.request
 from sys import argv
