@@ -18,10 +18,10 @@ if __name__ == "__main__":
     req = requests.post(url, data=data)
     res_dict = req.json()
 
-    if (res_dict == {}):
+    if (len(res_dict) == 0):
         print("No result")
 
-    elif (req.headers.get('content-type')) != 'application/json':
+    elif (req.headers.get('Content-Type')) != 'application/json':
         print("Not a valid JSON")
 
     else:
