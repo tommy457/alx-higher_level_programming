@@ -10,7 +10,7 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    url = f"https://api.github.com/repos/{argv[1]}/{argv[2]}/commits"
+    url = f"https://api.github.com/repos/{argv[2]}/{argv[1]}/commits"
     headers = {"Accept": "application/vnd.github+json",
                "X-GitHub-Api-Version": "2022-11-28"}
     req = requests.get(url=url, headers=headers)
