@@ -8,6 +8,7 @@ import urllib.request
 url = "https://intranet.alxswe.com/status"
 with urllib.request.urlopen(url) as response:
     html = response.read()
-    body = "Body response:\n\t- type: {}"\
-        "\n\t- content: {}\n\t- utf8 content: {}"
-    print(body.format(type(html), html, html.decode('utf-8')))
+    print("Body response:")
+    print(f"\t- type: {type(html)}")
+    print(f"\t- content: {html}")
+    print(f"\t- utf8 content: {html.decode('utf-8')}")
