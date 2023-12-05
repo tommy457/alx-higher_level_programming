@@ -5,8 +5,7 @@ Script that fetches an url and prints the body.
 import urllib.request
 
 
-url = "https://intranet.alxswe.com/status"
-with urllib.request.urlopen(url) as response:
+with urllib.request.urlopen("https://intranet.alxswe.com/status") as response:
     html = response.read()
     print("Body response:")
     print(f"\t- type: {type(html)}")
