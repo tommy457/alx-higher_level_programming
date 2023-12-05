@@ -4,9 +4,8 @@ Script that fetches an url and prints the body.
 """
 import urllib.request
 
-
-with urllib.request.urlopen("https://intranet.alxswe.com/status") as response:
-    res = response.read()
+with urllib.request.urlopen("https://intranet.alxswe.com/status") as res:
+    res = res.read()
     print("Body response:")
     print(f"\t- type: {type(res)}")
     print(f"\t- content: {res}")
